@@ -1000,7 +1000,7 @@ insert into pms_role_operator (id,version,status,creater,create_time, editor, ed
 -- -- 角色与用户功能点关联的初始化数据
 
 -- admin（拥有所有的权限点）
-insert into pms_role_permission  (role_id, permission_id) select 1,id from PMS_PERMISSION;
+insert into pms_role_permission  (role_id, permission_id) select 1,id from pms_permission;
 
 
 -- guest （只有所有的查看权限）
@@ -1028,10 +1028,10 @@ values
 --  角色与信息关联初始化数据
 -- admin
 
-insert into pms_menu_role(role_id, menu_id) select 1,id from PMS_MENU;
+insert into pms_menu_role(role_id, menu_id) select 1,id from pms_menu;
 
 -- guest  所有的菜单（只有查看权限）
-insert into pms_menu_role (role_id, menu_id) select 2,id from PMS_MENU;
+insert into pms_menu_role (role_id, menu_id) select 2,id from pms_menu;
 
 -- 2016.8.5 第三方支付信息表增加支付宝线下产品字段
 alter table rp_user_pay_info add offline_app_id varchar(50);
